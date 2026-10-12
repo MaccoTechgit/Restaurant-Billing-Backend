@@ -27,7 +27,7 @@ One Go service, one SQLite database, one package (`internal/app`) organised by a
 
 ## Testing
 `internal/app/app_test.go` covers security (injection, traversal, workflow forgery, secret masking), roles and branch isolation, printing and
-order flows. `cmd/loadtest` simulates tens of thousands of users to find bottlenecks.
+order flows. `tools/loadtest` simulates tens of thousands of users to find bottlenecks.
 
 ## Growing the codebase
 When an area outgrows its files (for example accounting), move it to its own package under `internal/` with a small interface to the rest

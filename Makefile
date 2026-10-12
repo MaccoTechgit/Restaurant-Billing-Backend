@@ -28,7 +28,7 @@ check: ## what CI runs: formatting, vet, tests
 	go test ./...
 
 loadtest: ## simulate many users against a running server (see README)
-	go run ./cmd/loadtest -users 50000 -conns 9000 -sse 4000 -think 15s
+	go run ./tools/loadtest -users 50000 -conns 9000 -sse 4000 -think 15s
 
 docker: ## build the container image
 	docker build -f deploy/Dockerfile -t restaurant-billing-backend .

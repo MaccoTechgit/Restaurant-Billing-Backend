@@ -15,7 +15,7 @@ Listens on `:8080`. Data is stored in SQLite (`data/tablebill.db`). Requirements
 ## Project layout
 ```
 cmd/server/        program entry point (flags, then app.Run)
-cmd/loadtest/      load generator: simulates many users, order writes and live-update connections
+tools/loadtest/    load generator (a separate tool, not part of the server): simulates many users, order writes and live-update connections
 internal/app/      the application (one package, grouped by area - see docs/ARCHITECTURE.md) + tests
 deploy/            Dockerfile
 docs/              architecture and deployment notes
