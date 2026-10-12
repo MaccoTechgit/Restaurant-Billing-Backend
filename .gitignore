@@ -1,0 +1,4 @@
+data/
+*.exe
+*.log
+.env
