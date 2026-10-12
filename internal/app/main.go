@@ -451,7 +451,7 @@ func (a *App) frontendOrInfo() http.Handler {
 				return
 			}
 			writeJSON(w, 200, map[string]any{"service": "MacBill System API", "status": "running",
-				"note": "This is the backend only. Start the frontend (folder 'frontend') and open it in the browser."})
+				"note": "This is the MacBill System API, working correctly. It has no screens - open the app at your frontend address (the frontend forwards its requests here)."})
 		})
 	}
 	files := http.FileServer(http.Dir(dir))
