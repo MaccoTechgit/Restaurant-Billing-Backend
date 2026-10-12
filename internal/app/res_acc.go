@@ -586,7 +586,7 @@ func init() {
 			return err
 		}), Confirm("dispose", "Write this asset off?"))
 	def("costing_policies", "accounting", "Costing policies", `name*^~; method:select(average)=average^; applies_to:select(all|category)=all; include_waste:bool=true; status:select(active|inactive)^=active`,
-		Hint("How ingredient cost is worked out. TableBill uses the weighted-average cost."))
+		Hint("How ingredient cost is worked out. MacBill System uses the weighted-average cost."))
 	def("accruals", "accounting", "Accruals & prepayments", `kind:select(accrual|prepayment)*^; description*^~; amount:money*^; start:date*; months:int=1; expense:select(general_expense|rent|utilities|marketing|repairs)=general_expense; recognised:int.^=0; status:select(draft|active|completed)^=draft`, Scoped, Label("{description}"),
 		Hint("Prepayment: paid now, expensed over several months. Accrual: expense known now, paid later."),
 		ActFn("activate", "Activate", LvApprove, S("draft"), "ok", func(a *App, tx *sql.Tx, c *Claims, r *Rec, p map[string]any) error {

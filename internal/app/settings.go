@@ -198,7 +198,7 @@ func (a *App) handleConfig(w http.ResponseWriter, r *http.Request) {
 
 func init() {
 	setting("application", "Application", "settings", "Your restaurant's name and basic details.",
-		`app_name|Restaurant name:text*=TableBill Restaurant; tagline:text; app_url|Public website URL:url; phone:tel; email:email; address:textarea; tax_id|Tax / GST number:text;
+		`app_name|Restaurant name:text*=MacBill System; tagline:text; app_url|Public website URL:url; phone:tel; email:email; address:textarea; tax_id|Tax / GST number:text;
 		timezone:select(Asia/Kolkata|Asia/Dubai|Asia/Amman|Asia/Riyadh|Asia/Karachi|Asia/Dhaka|Europe/London|America/New_York|UTC)=Asia/Kolkata;
 		default_language:select(en|hi|ar)=en; date_format:select(DD/MM/YYYY|MM/DD/YYYY|YYYY-MM-DD)=DD/MM/YYYY; footer_text:text=Thank you! Visit again.`)
 	setting("appearance", "Appearance & Logo", "settings", "Colours and logo shown across the app and on receipts.",
@@ -214,12 +214,12 @@ func init() {
 		`timer_warn_min|Warn after (minutes):int=10; timer_late_min|Late after (minutes):int=20; sound|Play sound for new tickets:bool=true; show_options|Show item options on ticket:bool=true; auto_ready|Mark order ready when all items are ready:bool=true; auto_print|Auto-print new kitchen tickets (default for kitchen screens):bool=false; show_timer|Show minutes on kitchen tickets (otherwise only the order number):bool=false`)
 	setting("qr", "Table QR Ordering", "settings", "Guests scan a QR code at the table and order from their phone.",
 		`enabled:bool=true; require_phone|Ask for phone number:bool=false; auto_accept|Send straight to kitchen (no staff approval):bool=true; welcome_text:text=Welcome! Choose your dishes and we will bring them to your table.; allow_call_waiter:bool=true`)
-	setting("pwa", "PWA (install as app)", "settings", "Lets staff install TableBill on a phone or tablet.",
-		`installable:bool=true; short_name:text=TableBill; theme_color:color=#f97316`)
+	setting("pwa", "PWA (install as app)", "settings", "Lets staff install MacBill System on a phone or tablet.",
+		`installable:bool=true; short_name:text=MacBill; theme_color:color=#f97316`)
 	setting("two_factor", "Two-factor authentication", "settings", "Staff can protect their login with an authenticator app (Google Authenticator, Authy ...).",
 		`enabled|Allow two-factor:bool=true`)
 	setting("passkeys", "Passkeys", "settings", "Sign in with fingerprint / face / security key (WebAuthn).",
-		`enabled|Allow passkey sign-in:bool=false; rp_name|Name shown to users:text=TableBill`)
+		`enabled|Allow passkey sign-in:bool=false; rp_name|Name shown to users:text=MacBill System`)
 	setting("recovery", "Password recovery", "settings", "Lets staff request a password-reset link.",
 		`enabled|Allow "Forgot password":bool=true; token_ttl_min|Link valid for (minutes):int=60`)
 	setting("filesystem", "Filesystem & uploads", "settings", "Where uploaded images are stored.",

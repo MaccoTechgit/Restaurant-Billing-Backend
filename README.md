@@ -32,7 +32,7 @@ docs/              architecture and deployment notes
 | `TRUST_PROXY` | `1` when behind the frontend / a reverse proxy, so real client IPs are used | `0` |
 | `TLS_CERT`, `TLS_KEY` | serve HTTPS directly | - |
 | `DEMO` | `1` enables one-click demo logins (never in production) | `0` |
-| `RESTAURANT_NAME`, `CURRENCY` | defaults shown in the app | `TableBill Restaurant`, `₹` |
+| `RESTAURANT_NAME`, `CURRENCY` | defaults shown in the app | `MacBill System`, `₹` |
 | `SSE_PER_USER` | live-update connections allowed per user | `10` |
 | `ALLOW_PRIVATE_URLS` | allow private addresses in integrations | off |
 | `DISABLE_RATE_LIMIT` | `1` only for load tests | `0` |

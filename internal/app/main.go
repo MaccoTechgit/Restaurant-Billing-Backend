@@ -110,7 +110,7 @@ func Run() {
 		}()
 	}
 	go func() {
-		log.Printf("TableBill running on %s (demo mode: %v)", cfg.Addr, cfg.Demo)
+		log.Printf("MacBill System running on %s (demo mode: %v)", cfg.Addr, cfg.Demo)
 		var err error
 		if cert, key := os.Getenv("TLS_CERT"), os.Getenv("TLS_KEY"); cert != "" && key != "" {
 			err = srv.ListenAndServeTLS(cert, key)
@@ -388,8 +388,12 @@ func (a *App) routes() http.Handler {
 func (a *App) handleManifest(w http.ResponseWriter, r *http.Request) {
 	p := a.settingGroup("pwa")
 	name := a.settingStr("application", "app_name", a.cfg.Restaurant)
-	m := map[string]any{"name": name, "short_name": a.settingStr("pwa", "short_name", "TableBill"), "start_url": "/app", "scope": "/", "display": "standalone",
-		"background_color": "#ffffff", "theme_color": toStr(p["theme_color"]), "icons": []any{map[string]any{"src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}}}
+	m := map[string]any{"name": name, "short_name": a.settingStr("pwa", "short_name", "MacBill"), "start_url": "/app", "scope": "/", "display": "standalone",
+		"background_color": "#ffffff", "theme_color": toStr(p["theme_color"]), "icons": []any{
+			map[string]any{"src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"},
+			map[string]any{"src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+			map[string]any{"src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+			map[string]any{"src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}}}
 	w.Header().Set("Content-Type", "application/manifest+json")
 	json.NewEncoder(w).Encode(m)
 }
@@ -446,7 +450,7 @@ func (a *App) frontendOrInfo() http.Handler {
 				writeErr(w, 404, "unknown API route")
 				return
 			}
-			writeJSON(w, 200, map[string]any{"service": "TableBill API", "status": "running",
+			writeJSON(w, 200, map[string]any{"service": "MacBill System API", "status": "running",
 				"note": "This is the backend only. Start the frontend (folder 'frontend') and open it in the browser."})
 		})
 	}

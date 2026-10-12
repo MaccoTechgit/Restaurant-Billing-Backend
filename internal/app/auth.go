@@ -471,7 +471,7 @@ func (a *App) handle2FASetup(w http.ResponseWriter, r *http.Request) {
 	rand.Read(b)
 	secret := b32.EncodeToString(b)
 	a.db.wdb.Exec(`UPDATE users SET totp_secret=?,totp_on=0 WHERE id=?`, secret, c.UID)
-	issuer := a.settingStr("application", "app_name", "TableBill")
+	issuer := a.settingStr("application", "app_name", "MacBill System")
 	writeJSON(w, 200, map[string]string{"secret": secret,
 		"uri": fmt.Sprintf("otpauth://totp/%s:%s?secret=%s&issuer=%s", issuer, c.User, secret, issuer)})
 }

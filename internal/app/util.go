@@ -41,7 +41,7 @@ func loadConfig() Config {
 		Demo:       env("DEMO", "0") == "1", // demo = passwordless sign-in buttons: OFF unless you ask for it
 		TrustProxy: env("TRUST_PROXY", "0") == "1",
 		Currency:   env("CURRENCY", "₹"),
-		Restaurant: env("RESTAURANT_NAME", "TableBill Restaurant"),
+		Restaurant: env("RESTAURANT_NAME", "MacBill System"),
 		NoLimit:    env("DISABLE_RATE_LIMIT", "0") == "1",
 	}
 }

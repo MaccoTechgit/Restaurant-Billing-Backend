@@ -204,7 +204,7 @@ func (a *App) seed(demoPassword string) {
 		mk(tx, "menus", 0, map[string]any{"name": "Manakish bar", "type": "dine_in", "status": "active", "categories": []any{f(cat["Manakish"])}})
 
 		// ---- loyalty, promotions, gift cards ----
-		mk(tx, "loyalty_programs", 0, map[string]any{"name": "TableBill Rewards", "earn_rate": 5.0, "point_value": 100.0, "min_redeem": 50.0, "expiry_days": 365.0, "status": "active"})
+		mk(tx, "loyalty_programs", 0, map[string]any{"name": "MacBill Rewards", "earn_rate": 5.0, "point_value": 100.0, "min_redeem": 50.0, "expiry_days": 365.0, "status": "active"})
 		mk(tx, "loyalty_tiers", 0, map[string]any{"name": "Silver", "min_spend": 500000.0, "multiplier": 1.2, "discount_pct": 0.0, "color": "#94a3b8"})
 		mk(tx, "loyalty_tiers", 0, map[string]any{"name": "Gold", "min_spend": 1500000.0, "multiplier": 1.5, "discount_pct": 5.0, "color": "#f59e0b"})
 		mk(tx, "loyalty_rewards", 0, map[string]any{"name": "₹50 off", "points_cost": 50.0, "type": "discount", "value": 5000.0, "status": "active"})
@@ -232,7 +232,7 @@ func (a *App) seed(demoPassword string) {
 		mk(tx, "fin_accounts", 0, map[string]any{"name": "Cash drawer", "kind": "cash", "ledger": "cash", "currency": "INR", "opening_balance": 0.0, "status": "active"})
 		mk(tx, "fin_accounts", 0, map[string]any{"name": "HDFC current account", "kind": "bank", "ledger": "bank", "number": "50200012345678", "currency": "INR", "opening_balance": 0.0, "status": "active"})
 		mk(tx, "fin_accounts", 0, map[string]any{"name": "Card machine clearing", "kind": "card", "ledger": "card_clearing", "currency": "INR", "status": "active"})
-		mk(tx, "legal_entities", 0, map[string]any{"name": "TableBill Hospitality Pvt Ltd", "code": "TBH", "country": "India", "currency": "INR", "status": "active", "branches": []any{f(main), f(dt), f(ap)}})
+		mk(tx, "legal_entities", 0, map[string]any{"name": "MacBill Hospitality Pvt Ltd", "code": "TBH", "country": "India", "currency": "INR", "status": "active", "branches": []any{f(main), f(dt), f(ap)}})
 		mk(tx, "dimensions", 0, map[string]any{"name": "Cost centre", "code": "CC", "status": "active", "values": []any{map[string]any{"code": "KIT", "name": "Kitchen"}, map[string]any{"code": "SVC", "name": "Service"}, map[string]any{"code": "ADM", "name": "Admin"}}})
 		mk(tx, "revenue_centers", 0, map[string]any{"name": "Dining room", "code": "DINE", "channel": "dine_in", "status": "active"})
 		mk(tx, "revenue_centers", 0, map[string]any{"name": "Delivery", "code": "DLV", "channel": "delivery", "status": "active"})
@@ -655,6 +655,6 @@ func (a *App) seedExtras(ids map[string]int64, rng *rand.Rand) {
 	if err != nil {
 		log.Println("seed extras:", err)
 	}
-	a.notify(RoleManager, 0, "info", "Welcome to TableBill", "Demo data is loaded - explore every module from the left rail.", "#/dashboard")
+	a.notify(RoleManager, 0, "info", "Welcome to MacBill System", "Demo data is loaded - explore every module from the left rail.", "#/dashboard")
 	a.notify("", 0, "warn", "Tip", "Open Settings → Table QR ordering to try guest ordering from a phone.", "#/set:qr")
 }
