@@ -1,4 +1,6 @@
+bin/
 data/
 *.exe
 *.log
 .env
+coverage.out

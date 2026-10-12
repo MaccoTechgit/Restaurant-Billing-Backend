@@ -1,4 +1,4 @@
-module tablebill
+module github.com/maccotechgit/restaurant-billing-backend
 
 go 1.26.2
 
